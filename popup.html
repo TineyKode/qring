@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>QRing</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>QRing</h1>
+    <button id="useTab" class="ghost" title="Use current tab's URL">Use this tab</button>
+  </header>
+
+  <textarea id="input" rows="3" placeholder="Paste a link or any text…" autofocus></textarea>
+  <div class="meta"><span id="count">0 chars</span><span id="warn" hidden>Too long for a QR code</span></div>
+
+  <div class="stage">
+    <canvas id="canvas" width="240" height="240"></canvas>
+    <div id="empty">Your QR code appears here</div>
+  </div>
+
+  <div class="opts">
+    <label>Size
+      <select id="size">
+        <option value="512">512 px</option>
+        <option value="1024" selected>1024 px</option>
+        <option value="2048">2048 px</option>
+      </select>
+    </label>
+    <label>Error correction
+      <select id="ecc">
+        <option value="L">Low</option>
+        <option value="M" selected>Medium</option>
+        <option value="Q">Quartile</option>
+        <option value="H">High</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="actions">
+    <button id="dlPng">Download PNG</button>
+    <button id="dlSvg" class="secondary">SVG</button>
+    <button id="copy" class="secondary">Copy</button>
+  </div>
+  <p id="status" aria-live="polite"></p>
+
+  <script src="qrcode.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
