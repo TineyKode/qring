@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
   "name": "QRing",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Turn any link, text, or image URL into a QR code. Right-click or use the popup, then copy or download.",
-  "permissions": ["activeTab", "contextMenus", "storage", "clipboardWrite"],
+  "permissions": ["activeTab", "contextMenus", "storage"],
   "action": {
     "default_popup": "popup.html",
     "default_title": "QRing"
